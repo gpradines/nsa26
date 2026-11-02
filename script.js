@@ -1,15 +1,3 @@
-// Inicializa o mapa e centraliza em Recife (Latitude, Longitude) com zoom nível 4
-const map = L.map('map').setView([-8.0476, -34.8770], 4);
-
-// Adiciona a camada de satélite da Esri
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
-
-// Preparamos a função que futuramente vai ler o arquivo nodes.json
-// fetch('nodes.json')
-//   .then(response => response.json())
-//   .then(data => console.log("Dados carregados:", data));
 // Inicializa o mapa focado no globo terrestre (zoom nível 2)
 const map = L.map('map').setView([10, -20], 2);
 
@@ -19,7 +7,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 }).addTo(map);
 
 // Função mágica: Busca o seu arquivo JSON e desenha no mapa
-fetch('nodes.json')
+fetch('analogos.json')
     .then(resposta => resposta.json()) // Converte o arquivo para algo que o JS entende
     .then(dadosGeologicos => {
         // Para cada local no seu arquivo JSON, faça o seguinte:
