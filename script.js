@@ -7,7 +7,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 }).addTo(map);
 
 // Função mágica: Busca o seu arquivo JSON e desenha no mapa
-fetch('analogos.json')
+fetch('nodes.json')
     .then(resposta => resposta.json()) // Converte o arquivo para algo que o JS entende
     .then(dadosGeologicos => {
         // Para cada local no seu arquivo JSON, faça o seguinte:
